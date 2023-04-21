@@ -1,14 +1,18 @@
-on: push
+on:
+  push
 
-name: Jira Example
+name: Test Transition Issue
 
 jobs:
-  build:
+  test-transition-issue:
+    name: Transition Issue
     runs-on: ubuntu-latest
-    name: Jira Example
     steps:
+    - name: Checkout
+      uses: actions/checkout@master
+
     - name: Login
-      uses: atlassian/gajira-login@v3
+      uses: atlassian/gajira-login@master
       env:
         JIRA_BASE_URL: ${{ secrets.JIRA_BASE_URL }}
         JIRA_USER_EMAIL: ${{ secrets.JIRA_USER_EMAIL }}
