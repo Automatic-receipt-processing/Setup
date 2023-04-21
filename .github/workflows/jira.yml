@@ -7,12 +7,8 @@ jobs:
     name: Transition Issue
     runs-on: ubuntu-latest
     steps:
-      - name: Jira Issue Transition
-        uses: atlassian/gajira-transition@v3
-
       - name: Checkout
         uses: actions/checkout@v2
-
       - name: Login
         uses: atlassian/gajira-login@v2.0.0
         env:
